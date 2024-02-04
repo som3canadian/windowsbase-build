@@ -51,7 +51,6 @@ RUN Remove-Item -Path mingit.zip
 # Set the Path environment variable to include nim, mingw, mingit, and nimble locations
 RUN "[Environment]::SetEnvironmentVariable('Path', '${env:Path};C:\nim\bin;C:\nim\dist\mingw64\bin;${env:USERPROFILE}\.nimble\bin;c:\nim\dist\mingit\cmd;C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin;C:\Windows\Microsoft.NET\Framework\v4.0.30319;C:\TEMP', [System.EnvironmentVariableTarget]::User)"
 
-# COPY --from=build "c:\nim" "c:\nim"
 RUN cd C:\\nim
 RUN C:\\nim\\finish.exe -y
 # RUN "nimble update"
